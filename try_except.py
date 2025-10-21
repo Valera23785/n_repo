@@ -81,4 +81,22 @@ def withdraw(balance, amount):
     finally:
         print("Transaction finished.")
 
-withdraw(100, 101)
+# withdraw(100, 101)
+
+def safe_file_read(filename):
+    try:
+        with open(filename, 'r') as f:
+            content = f.read()
+            print(content)
+    except FileNotFoundError:
+        print("File not found.")
+    except PermissionError:
+        print("Permission denied.")
+    except Exception as e:
+        print("Unexpected error occurred.")
+
+    else:
+        print("File read successfully.")
+
+    finally:
+        print("Operation complete.")
